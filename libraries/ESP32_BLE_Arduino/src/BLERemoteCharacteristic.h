@@ -17,6 +17,7 @@
 #include "BLERemoteService.h"
 #include "BLERemoteDescriptor.h"
 #include "BLEUUID.h"
+#include "BLEAddress.h"
 #include "FreeRTOS.h"
 
 class BLERemoteService;
@@ -51,7 +52,7 @@ public:
 	void        writeValue(uint8_t newValue, bool response = false);
 	std::string toString();
 	uint8_t*	readRawData();
-
+	BLEAddress  getRemoteAddress();
 	BLERemoteService* getRemoteService();
 	
 private:
