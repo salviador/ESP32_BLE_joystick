@@ -24,7 +24,7 @@ void setup() {
     if (advertisedDevice.haveServiceUUID()) {      
       auto* pClient = BLEDevice::createClient();
       if(pClient) {
-        if(pClient->connect(advertisedDevice.getAddress())) {
+        if(pClient->connect(advertisedDevice.getAddress(), advertisedDevice.getAddressType())) {
           Serial.print(pClient->getPeerAddress().toString().c_str());
           Serial.print(" ");
           Serial.println(advertisedDevice.getName().c_str());
